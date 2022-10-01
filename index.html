@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Shoes App</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="icon" href="./Images/icons8-shoe-96.png" type="image/icon type">
+</head>
+<body>
+
+    <h3>My shoe collection</h3>
+    
+    <div class="main-container">
+
+        <div class="new-entry">
+
+            <div>
+                <label for="">Designer</label>
+                <input type="text" class="designer">
+            </div>
+
+            <div>
+                <label for="">Model</label>
+                <input type="text" class="model">
+            </div>
+
+            <div>
+                <label for="">Size</label>
+                <input type="number" class="size">
+            </div>
+
+            <div>
+                <label for="">Price</label>
+                <input type="number" class="price">
+            </div>
+
+        </div>
+
+        <button class="btn">Add new item</button>
+    </div>
+
+    <table class="inventory">
+        <thead class="table-head">
+            <th>Designer</th>
+            <th>Model</th>
+            <th>Size</th>
+            <th>Price $</th>
+        </thead>
+
+        <tbody class="table-body">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="deletion">delete</button>
+    <button class="edit">edit</button>
+
+    <div class="new-section"></div>
+
+</body>
+
+<script src="./data.js"></script>
+<script src="./functions.js"></script>
+<script src="./app.js"></script>
+
+</html>

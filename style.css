@@ -1,0 +1,102 @@
+img, input {
+    display:block;
+}
+
+input {
+    outline: none;
+
+}
+
+body {
+    font-family: "Audiowide", sans-serif;
+    text-align: center;
+}
+
+h3 {
+    font-size: 50px;
+    color: rgb(183, 85, 0);
+}
+
+.main-container {
+    margin-top: 50px;
+    /* border: 2px solid red; */
+
+    background-color: rgb(34, 104, 104);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.new-entry {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* border: 2px solid red; */
+    gap: 30px;
+    text-align: center;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.btn {
+    color: white;
+    background-color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.inventory {
+    width: 90%;
+    margin: auto;
+    height: auto;
+    border: 5px solid black;
+
+    margin-top: 20px;
+    color: rgb(34, 104, 104);
+}
+
+.table-head {
+    background-color: black;
+    color: white;
+    
+}
+
+.table-body {
+    margin-bottom: 10px;
+}
+
+
+.deletion {
+    margin-top: 30px;
+    border: none;
+}
+
+.deletion:hover {
+    background-color: red;
+    color: white;
+}
+
+.selectat {
+    color:  red;
+}
+
+.edit {
+    margin-top: 30px;
+    border: none;
+}
+
+.edit:hover {
+    background-color: red;
+    color: white;
+}
+
+.editable-section {
+    width: 70%;
+    height: 300px;
+    border: 2px solid red;
+}
