@@ -96,7 +96,25 @@ h3 {
 }
 
 .editable-section {
-    width: 70%;
-    height: 300px;
-    border: 2px solid red;
+
+    /* border: 2px solid magenta; */
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    
+
+}
+
+.editable-section input {
+    width: 20%;
+    margin: auto;
+
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
 }

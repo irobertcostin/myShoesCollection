@@ -13,18 +13,15 @@ function createRow(obj) {
 }
 
 
-
-function createNewRow() {
-    let text = `
-    <div class="editable-section">
-    <input>
-    <input>
-    <input>
-    <input>
-    </div>
-    `
-    return text;
-}
+// de ce nu merge aceasta functie de create Row?
+// function createNewRow() {
+//     let text = `
+//     <div class="editable-section">
+//     <p>Hello</p>
+//     </div>
+//     `
+//     return text;
+// }
 
 
 
@@ -63,7 +60,7 @@ function getShoe () {
         return shoe;
     } else {
 
-        let text = "";
+        
 
         let erors = [];
 
@@ -101,6 +98,7 @@ function getShoe () {
 
     }
 
+//functie ce primeste un array si un parametru, si creaza un nou array fara elementul cu parametrul dat 
 function eliminareIntrare (arr,model) {
 
         let nou = [];
@@ -116,14 +114,27 @@ function eliminareIntrare (arr,model) {
 
     }
 
+// reset inputs
+function resetInputs () {
+    inputs.forEach(input => {
+        input.value = "";
+})
+    }
 
-    // function createEditSection (arr) {
 
-    //     for(i=0;i<arr.length;i++) {
+//functie de preia un element si returneaza un obiect 
 
-    //         if (arr[i].classList.contains(""))
+function getShoeByModel (arr,model) {
 
+    let x = "";
 
-    //     }
+    for (i=0;i<arr.length;i++) {
         
-    // }
+        if(arr[i].model.toLowerCase() == model.toLowerCase()){
+            x = arr[i];
+        }
+
+    }
+        return x;
+
+}

@@ -1,13 +1,18 @@
-let btnCreate = document.querySelector(".btn");
-let bodyTable = document.querySelector(".table-body")
-let obiectSelectat = "";
+let btnCreate = document.querySelector(".btn"); // butonul adauga
+let bodyTable = document.querySelector(".table-body") // click pe body table
+let obiectSelectat = ""; // stocare model pentru import in functia de stergere
 let designerSelectat = ""; // o stocam ca sa o importam in functia de delete 
 let deletion = document.querySelector(".deletion");
-let edit = document.querySelector(".edit")
-let anotherRow = document.querySelector(".new-section")
+let edit = document.querySelector(".edit") // butonul edit
+let inputs = document.querySelectorAll(`.designer , .model , .size , .price`); // pentru reset inputs
 
 
+// inputs edit 
 
+let designerEdit = document.querySelector(".designerEdit")
+let modelEdit = document.querySelector(".modelEdit")
+let sizeEdit = document.querySelector(".sizeEdit")
+let priceEdit = document.querySelector(".priceEdit")
 
 
 btnCreate.addEventListener("click", () => {
@@ -23,6 +28,7 @@ let raspuns = getShoe();
 if (raspuns.designer != undefined) {
     shoes.push(raspuns);
     populateTable(shoes);
+    resetInputs();
 }  
 // daca vine orice altceva din aceasta functie, decat obiecte cu atribute, atunci acela este arrayul 
 //declarat de noi ca erori, si acest FOR va lua fiecare element al obiectului, si le va arata sub forma de 
@@ -34,19 +40,12 @@ else    {
 }
 
 // reset inputs
-let inputs = document.querySelectorAll(`.designer , .model , .size , .price`);
 
-inputs.forEach(input => {
-    input.value = "";
-})
 }) 
 
 bodyTable.addEventListener("click", (e) => {
 
     let obj = e.target;
-
-
-
     // am adaugat o clasa in fct createRow, pentru a putea sa selectam doar randul care contine designer al elementelor
     if (obj.classList.contains("asta")) {
 
@@ -61,7 +60,15 @@ bodyTable.addEventListener("click", (e) => {
         obiectSelectat = obj.textContent;    // textContent pentru ca vrem ca obiectSelectat sa preia toti descendentii  - adica va sterge toate elementele pe care le gaseste la fel 
         designerSelectat = obj; // stocam la final de functie designerSelectat, ca sa il putem sterge la inceput de functie
 
-}
+}   
+
+let adidas = getShoeByModel(shoes,obiectSelectat);
+
+    designerEdit.value = adidas.designer;
+    modelEdit.value = adidas.model;
+    sizeEdit.value = adidas.size;
+    priceEdit.value = adidas.price;
+
 
 })
 
@@ -73,13 +80,8 @@ deletion.addEventListener("click",  () =>   {
 
 })
 
-populateTable(shoes);
-
-
 edit.addEventListener("click", () => {
 
-    createEditSection();    
-
-
-
 })
+
+populateTable(shoes);
