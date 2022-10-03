@@ -116,9 +116,15 @@ function eliminareIntrare (arr,model) {
 
 // reset inputs
 function resetInputs () {
-    inputs.forEach(input => {
-        input.value = "";
-})
+    //de ce nu functioneaza?
+//     inputs.forEach(input => {
+//         input.value = "";
+// })
+
+designerEdit.value = "";
+modelEdit.value = "";
+sizeEdit.value="";
+priceEdit.value="";
     }
 
 
@@ -136,5 +142,14 @@ function getShoeByModel (arr,model) {
 
     }
         return x;
+
+}
+
+
+function updateShoe (arr,model) {
+
+    arr = eliminareIntrare(arr,model.model);
+    arr.push(model);
+    return arr;
 
 }

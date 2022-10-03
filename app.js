@@ -2,8 +2,10 @@ let btnCreate = document.querySelector(".btn"); // butonul adauga
 let bodyTable = document.querySelector(".table-body") // click pe body table
 let obiectSelectat = ""; // stocare model pentru import in functia de stergere
 let designerSelectat = ""; // o stocam ca sa o importam in functia de delete 
-let deletion = document.querySelector(".deletion");
+let deletion = document.querySelector(".deletion");//buton stergere
 let edit = document.querySelector(".edit") // butonul edit
+
+//input reset
 let inputs = document.querySelectorAll(`.designer , .model , .size , .price`); // pentru reset inputs
 
 
@@ -75,8 +77,9 @@ let adidas = getShoeByModel(shoes,obiectSelectat);
 deletion.addEventListener("click",  () =>   {
     
     shoes = eliminareIntrare(shoes, obiectSelectat);
-
     populateTable(shoes);
+
+    resetInputs();
 
 })
 
