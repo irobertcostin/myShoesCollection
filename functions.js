@@ -105,7 +105,7 @@ function eliminareIntrare (arr,model) {
 
         for(i=0;i<arr.length;i++){
                 //transforma tot to lowercase
-            if (arr[i].model.toLowerCase() !== model.toLowerCase()) {
+            if (arr[i].model !== model) {
                 nou.push(arr[i]);
             }
         }
@@ -114,12 +114,16 @@ function eliminareIntrare (arr,model) {
 
     }
 
+
+function resetInputsNewItem () {
+    inputs.forEach(input => {
+        input.value = "";
+})
+}
+
 // reset inputs
 function resetInputs () {
-    //de ce nu functioneaza?
-//     inputs.forEach(input => {
-//         input.value = "";
-// })
+    
 
 designerEdit.value = "";
 modelEdit.value = "";
@@ -136,7 +140,7 @@ function getShoeByModel (arr,model) {
 
     for (i=0;i<arr.length;i++) {
         
-        if(arr[i].model.toLowerCase() == model.toLowerCase()){
+        if(arr[i].model == model){
             x = arr[i];
         }
 
@@ -147,8 +151,9 @@ function getShoeByModel (arr,model) {
 
 
 function updateShoe (arr,model) {
-
-    arr = eliminareIntrare(arr,model.model);
+    // arrayul devine un array nou, fara intrarea cu modeul pe care vrem sa o selectam
+    arr = eliminareIntrare(arr,model);
+    // dupa ce am eliminat elementul pe care vream sa il stergem, adaugam un altul nou
     arr.push(model);
     return arr;
 

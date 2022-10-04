@@ -9,6 +9,9 @@ let edit = document.querySelector(".edit") // butonul edit
 let inputs = document.querySelectorAll(`.designer , .model , .size , .price`); // pentru reset inputs
 
 
+
+
+
 // inputs edit 
 
 let designerEdit = document.querySelector(".designerEdit")
@@ -42,6 +45,8 @@ else    {
 }
 
 // reset inputs
+
+resetInputsNewItem()
 
 }) 
 
@@ -84,6 +89,18 @@ deletion.addEventListener("click",  () =>   {
 })
 
 edit.addEventListener("click", () => {
+
+    let adidas = {
+        designer:designerEdit.value,
+        model:modelEdit.value,
+        size:sizeEdit.value,
+        price:priceEdit.value
+    }
+
+    shoes = updateShoe(shoes,adidas);
+    populateTable(shoes);
+    resetInputs();
+    
 
 })
 
